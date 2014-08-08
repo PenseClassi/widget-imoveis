@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pense - Widget Imóveis :: Exemplo Simples</title>
+
+<style>
+*{
+	font-family: helvetica;
+}
+</style>
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+
+<style>
+	.code{
+		font-size: 10px;
+	}
+</style>
+
+
+</head>
+<body>
+
+	<!-- Pense API Sample -->
+
+	<h1>Search box - sample</h1>
+	<hr />
+	
+	<div id="contentHolder">
+		<!--  INCLUDE PENSE WIDGET LIB -->
+		<script type="text/javascript"
+			src="../pense-widget.js?project=61&partner=sample&hash=ca33047954ee200802367300798f23b59705966c&type=search"
+			async></script>
+		<!-- END PENSE WIDGET LIB -->
+	</div>
+
+	<br/>
+
+	<h2>Inclusão</h2>
+	<pre><code class="xml hljs "><span class="hljs-comment">&lt;!--  INCLUDE PENSE WIDGET LIB --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>
+    <span class="hljs-attribute">src</span>=<span class="hljs-value">"../pense-widget.js?project=61&amp;partner=sample&amp;hash=ca33047954ee200802367300798f23b59705966c&amp;type=search"</span>
+    <span class="hljs-attribute">async</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- END PENSE WIDGET LIB --&gt;</span></code></pre>
+
+
+	<h2>Parametros Inclusão</h2>
+	<ol>
+		<li>
+			<h3>project</h3>
+			<i>Integer</i> - Código do projeto que está sendo usado para inclusão do widget
+		</li>
+		<li>
+			<h3>partner</h3>
+			<i>String</i> - Nome do parceiro que está usando o codigo
+		</li>
+		<li>
+			<h3>hash</h3>
+			<i>String</i> - Hash que contém a liberação do acesso
+		</li>
+		<li>
+			<h3>type</h3>
+			<i>Enum (search,list,anuncio)</i> - Indica qual layout de widget deve ser iniciado
+		</li>
+		<li>
+			<h3>element_id</h3>
+			<i>String (Opcional)</i> - Id do elemento que irá ser renderizado 
+		</li>
+		
+	</ol>
+
+	<h3>Output</h3>
+	<hr />
+	<div id="#console"></div>
+</body>
+</html>
