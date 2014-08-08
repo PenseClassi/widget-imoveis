@@ -11,6 +11,8 @@ var pw = pw || (function(){
 	//Private vars
 	var scriptName = "pense-widget.js"; //Scriptname
 	var scriptTag; //reference to the html script tag
+	var url = "http://localhost:82/workspace_java_rbs/widget-imoveis";
+	var urlImoveis = "http://www.penseimoveis.com.br"
 	
 	/******** Get reference to self (scriptTag) *********/
     var allScripts = document.getElementsByTagName('script');
@@ -44,6 +46,19 @@ var pw = pw || (function(){
 	    };
 	    head.appendChild(script);
 	};
+	
+	// ===============================
+	// Loading external css
+	//
+	// Usage: loadCss('style.css');
+	// ===============================
+	function loadCss(href) {
+        var link_tag = document.createElement('link');
+        link_tag.setAttribute("type", "text/css");
+        link_tag.setAttribute("rel", "stylesheet");
+        link_tag.setAttribute("href", href);
+        (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(link_tag);
+    }
 	
 	var each = function (arr, fnc) {
 	    var data = [];
@@ -170,8 +185,9 @@ var pw = pw || (function(){
 	
 	var info = parseQueryString(scriptTag.src);
 	
-	getScript("../lib/handlebars-v1.3.0.js");
-	getScript("../lib/zepto.min.js", function(){ pw.init(); });
+	getScript(url+"/lib/handlebars-v1.3.0.js");
+	getScript(url+"/lib/zepto.min.js", function(){ pw.init(); });
+	loadCss(url+"/style.css");
 	
 	pwo = {
 		
@@ -195,11 +211,10 @@ var pw = pw || (function(){
 		init : function(config){
 			//Load Lib
 			
+			//Apply config
 			if(config){
 				this.applyConfig(config);
 			}
-			
-			//Auto init widget
 			
 			//Apenas inicializar se tiver o parametro type
 			if(this.params.type){
@@ -218,6 +233,7 @@ var pw = pw || (function(){
 		
 		
 		// ===============================
+		// TODO
 		// Apply Configuration to widget
 		//
 		// Usage: pw.appyConfig(configuration)
@@ -248,11 +264,11 @@ var pw = pw || (function(){
 		showSearchBox : function(){
 			var parentContainer = $(scriptTag).parent();
 			if(this.params.element_id){
-				$("#"+this.params.element_id);
+				parentContainer = $("#"+this.params.element_id);
 			}
 			if(parentContainer){
 				$.ajax({
-				      url: '../templates/search-box.html',
+				      url: url+'/templates/search-box.html',
 				      dataType: 'html',
 				      cache: false,
 				      context: this,
@@ -260,12 +276,35 @@ var pw = pw || (function(){
 				        source = data;
 				        var template    = Handlebars.compile(response.responseText);
 				        var context = {
-				          title: 'Static Title (to be replaced)'
+			        		urlpesquisa: urlImoveis+'/rs/lista/compra/rs/?Dormit%F3rios=2%3A2&Tipo+de+im%F3vel=Apartamento'
 				        };
-				        $(parentContainer).append($("<span id="+this.params.hash+"-"+this.config.search_box+"></span>").html(template(context)));
+				        $(parentContainer).append($("<div id="+this.params.hash+"-"+this.config.search_box+"></span>").html(template(context)));
+				        this.loadData("search-box");
 				      }
 				});
 			}
+		},
+		
+		// ===============================
+		// Render the Search Box
+		//
+		// Usage: pw.loadData(wtype)
+		// ===============================
+		loadData : function(wtype){
+			
+			//Inicia o load dos dados do widget que foi inicializado
+			switch(wtype){
+				case 'search-box':
+					
+					
+					
+					break;
+					
+				default:
+					//Nada.... (por enquanto)
+					break;
+			}
+			
 		}
 	};
 	return pwo;

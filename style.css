@@ -1,0 +1,20 @@
+/**
+ * CSS Padrao do serach box
+ * @autor Iuri Andreazza
+ */
+#widgetBody *{ font: normal 13px Arial; }
+#widgetBody{ border:1px solid #cccccc; padding: 10px; width: 300px; background: #f8f8f8; color: #333333; /* Old browsers */ background: -moz-linear-gradient(top, #f8f8f8 0%, #e0e0e0 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #f8f8f8 0%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #f8f8f8 0%,#e0e0e0 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #f8f8f8 0%,#e0e0e0 100%); /* IE10+ */ background: linear-gradient(to bottom, #f8f8f8 0%,#e0e0e0 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */ }
+
+#widgetBody .pense-imoveis-widget{ }
+#widgetBody .pense-imoveis-widget .logoPense{ display:block; background: url(images/logo.png) center center no-repeat; width: 281px; height: 35px; text-decoration: none; }
+#widgetBody .pense-imoveis-widget .separadorLinha { height: 10px; border-bottom: 1px solid #CCCCCC; margin-bottom: 5px; }
+#widgetBody .pense-imoveis-widget .botaoBuscar { background: url(images/btnBuscar.png) center center no-repeat; width: 95px; height: 30px; border:0px; padding:0px; color:white; font: bold 16px/32px Helvetica,HelveticaAux,Arial; }
+#widgetBody .pense-imoveis-widget FORM .campo { padding-top:2px; margin-top:2px; min-height: 28px; clear: both; line-height: 30px; }
+#widgetBody .pense-imoveis-widget FORM .campo LABEL { line-height: 15px; margin-top: 5px; width: 100px; font-weight: bold; text-align: right; float:left; }
+#widgetBody .pense-imoveis-widget FORM .campo .cmpCombo { float:left; margin-left: 10px; }
+#widgetBody .pense-imoveis-widget FORM .campo .cmpCombo SELECT { font-size: 12px; font-family: HelveticaNeue,Arial; width: 167px; height: 26px; background-color:white; box-shadow: 1px 1px 1px #9A9A9A inset; -webkit-box-shadow: 1px 1px 1px #9A9A9A inset; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; border: 0; }
+
+#widgetBody .pense-imoveis-widget FORM .campo .between { width: 12px; margin-left: 5px; }
+
+#widgetBody .pense-imoveis-widget FORM .campo .text { height: 26px; width: 60px; text-align: right; padding-left: 8px; margin-left: 10px; float: left; box-shadow: 1px 1px 1px #9A9A9A inset; -webkit-box-shadow: 1px 1px 1px #9A9A9A inset; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; border: 0; } 
+

@@ -1,117 +1,114 @@
 <div id="widgetBody" class="corpoWidget">
-	<div id="pense-imoveis-widget">
+	<div class="pense-imoveis-widget">
 
-		<div id="logoPense"></div>
+		<a class="logoPense" href="http://www.pense.com.br" >&nbsp;</a>
 
 		<div class="separadorLinha"></div>
 
 		<div class="tituloBusca">
-			<span>Busca avancaada:</span>
+			<span>Busca avan&ccedil;ada:</span>
 		</div>
 
-		<div>
-			<form action="/pense-imoveis/evento/pesquisa/22" method="get"
-				name="widgetForm" target="_self">
-				<input type="hidden" id="codigoEvento" name="codigoEvento"
-					value="22"> <input type="hidden" id="showAlertModal"
-					value="true">
-				<div id="finalidade" class="campo comboBox">
-					<label>Finalidade:</label>
-					<div class="comboFinalidade cmpCombo medio">
-						<div class="cmpBody">
-							<select name="finalidade">
-								<option value=" ">Selecione</option>
-								<option value="1">Venda</option>
-								<option value="2">Aluguel</option>
-							</select>
-						</div>
+		<form action="{{urlpesquisa}}" method="get"
+			name="widgetForm" target="_self">
+			<input type="hidden" id="codigoEvento" name="codigoEvento" value="22" /> 
+			<input type="hidden" id="avancada" value="true" />
+			
+			
+			<div id="finalidade" class="campo comboBox">
+				<label>Finalidade:</label>
+				<div class="comboFinalidade cmpCombo medio">
+					<div class="cmpBody">
+						<select name="finalidade">
+							<option value=" ">Selecione</option>
+							<option value="1">Venda</option>
+							<option value="2">Aluguel</option>
+						</select>
 					</div>
 				</div>
+			</div>
 
-				<div id="tipoImovel" class="campo comboBox">
-					<label>Tipo de im&#243;vel:</label>
-					<div class="comboTipoImovel cmpCombo medio">
-						<div class="cmpBody">
-							<select name="tipoImovel">
-								<option value=" ">Selecione</option>
-								<option value="4">Apartamento</option>
-								<option value="5">Casa</option>
-								<option value="6">Terreno</option>
-								<option value="7">Propriedade rural</option>
-								<option value="8">Im&#243;vel comercial</option>
-							</select>
-						</div>
+			<div id="tipoImovel" class="campo comboBox">
+				<label>Tipo de im&#243;vel:</label>
+				<div class="comboTipoImovel cmpCombo medio">
+					<div class="cmpBody">
+						<select name="Tipo de Imóvel">
+							<option value=" ">Selecione</option>
+							<option value="4">Apartamento</option>
+							<option value="5">Casa</option>
+							<option value="6">Terreno</option>
+							<option value="7">Propriedade rural</option>
+							<option value="8">Im&#243;vel comercial</option>
+						</select>
 					</div>
 				</div>
+			</div>
 
-				<div id="dormitorio" class="campo comboBox">
-					<label>Dormit&oacute;rios:</label>
-					<div class="comboDormitorio cmpCombo medio">
-						<div class="cmpBody">
-							<select name="dormitorio">
-								<option value=" ">Selecione</option>
-								<option value="10">0</option>
-								<option value="11">1</option>
-								<option value="12">2</option>
-								<option value="13">3</option>
-								<option value="14">4</option>
-								<option value="15">5 ou mais</option>
-							</select>
-						</div>
+			<div id="dormitorio" class="campo comboBox">
+				<label>Dormit&oacute;rios:</label>
+				<div class="comboDormitorio cmpCombo medio">
+					<div class="cmpBody">
+						<select name="Dormitórios">
+							<option value=" ">Selecione</option>
+							<option value="10">0</option>
+							<option value="11">1</option>
+							<option value="12">2</option>
+							<option value="13">3</option>
+							<option value="14">4</option>
+							<option value="15">5 ou mais</option>
+						</select>
 					</div>
 				</div>
+			</div>
 
-				<div class="campo valores">
-					<label for="valorInicial">Pre&ccedil;o de:</label> <input type="text"
-						id="valorInicial" name="valorInicial"
-						class="pequeno text preco hasmask" alt="decimal-12-2" value="0,00">
-					<label for="valorFinal" class="between">at&eacute;</label> <input
-						type="text" id="valorFinal" name="valorFinal"
-						class="pequeno text preco hasmask" alt="decimal-12-2" value="0,00">
-				</div>
+			<div class="campo valores">
+				<label for="valorInicial">Pre&ccedil;o de:</label> <input type="text"
+					id="valorInicial" name="valorInicial"
+					class="pequeno text preco hasmask" alt="decimal-12-2" value="0,00">
+				<label for="valorFinal" class="between">at&eacute;</label> <input
+					type="text" id="valorFinal" name="valorFinal"
+					class="pequeno text preco hasmask" alt="decimal-12-2" value="0,00">
+			</div>
 
-				<div id="estado" class="campo comboBox">
-					<label>Estado:</label>
-					<div class="comboEstado cmpCombo medio ">
-						<div class="cmpBody">
-							<select name="estado">
-								<option value="Santa Catarina" selected="selected">Santa Catarina</option>
-							</select>
-						</div>
+			<div id="estado" class="campo comboBox">
+				<label>Estado:</label>
+				<div class="comboEstado cmpCombo medio ">
+					<div class="cmpBody">
+						<select name="estado">
+							<option value="Santa Catarina" selected="selected">Santa Catarina</option>
+						</select>
 					</div>
 				</div>
+			</div>
 
-				<div id="cidade" class="campo comboBox">
-					<label>Cidade:</label>
-					<div class="comboCidade cmpCombo tmedio ">
-						<div class="cmpBody">
-							<select name="cidade">
-								<option value=" ">Selecione</option>
+			<div id="cidade" class="campo comboBox">
+				<label>Cidade:</label>
+				<div class="comboCidade cmpCombo tmedio ">
+					<div class="cmpBody">
+						<select name="cidade">
+							<option value=" ">Selecione</option>
 
-							</select>
-						</div>
+						</select>
 					</div>
 				</div>
+			</div>
 
-				<div id="bairro" class="campo comboBox">
-					<label>Bairro:</label>
-					<div class="comboBairro cmpCombo tmedio fixed">
-						<div class="cmpBody">
-							<select name="bairro">
-								<option value=" ">Selecione</option>
-							</select>
-						</div>
+			<div id="bairro" class="campo comboBox">
+				<label>Bairro:</label>
+				<div class="comboBairro cmpCombo tmedio fixed">
+					<div class="cmpBody">
+						<select name="bairro">
+							<option value=" ">Selecione</option>
+						</select>
 					</div>
 				</div>
+			</div>
 
-				<div class="itensHidden"></div>
+			<div class="itensHidden"></div>
 
-				<div>
-					<div id="botaoBuscar">Buscar</div>
-					<div id="logoGoogle"></div>
-				</div>
-				<input type="hidden" id="toLista" name="toLista" value="false">
-			</form>
-		</div>
+			<div>
+				<button type="submit" class="botaoBuscar">Buscar</button>
+			</div>
+		</form>
 	</div>
 </div>
